@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "家教雷达",
+  "version": "0.1.6",
+  "identifier": "com.tutorradar.public",
+  "build": {
+    "beforeDevCommand": "npm run desktop:dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run desktop:build",
+    "frontendDist": "../desktop-dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "家教雷达",
+        "width": 1280,
+        "height": 820,
+        "minWidth": 920,
+        "minHeight": 620,
+        "center": true,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval' https://webapi.amap.com https://*.amap.com; script-src-elem 'self' 'unsafe-inline' https://webapi.amap.com https://*.amap.com; connect-src 'self' ipc: http://ipc.localhost http://localhost:18765 http://127.0.0.1:18765 ws://127.0.0.1:1420 https://*.amap.com https://*.autonavi.com; img-src 'self' data: blob: https://*.amap.com https://*.autonavi.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; worker-src 'self' blob:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": [
+      "../../assets/tutor-radar.ico",
+      "../../assets/tutor-radar.png"
+    ],
+    "windows": {
+      "nsis": {
+        "languages": ["SimpChinese"]
+      },
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      }
+    }
+  }
+}

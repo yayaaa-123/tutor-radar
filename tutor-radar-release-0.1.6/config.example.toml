@@ -1,0 +1,67 @@
+[wechat]
+db_dir = "C:/path/to/xwechat_files"
+chat_id = "replace-me@chatroom"
+chat_name = "示例群"
+poll_interval_seconds = 5.0
+backfill_messages = 100
+
+[profile]
+gender = "male"
+school = "示例大学"
+year = "大三"
+subjects = ["数学", "物理", "化学"]
+preferred_subjects = ["数学", "物理"]
+weekend_only = true
+
+[storage]
+database = "data/private/monitor.db"
+health_file = "data/private/health.json"
+events_file = "data/private/orders.jsonl"
+
+[map]
+enabled = false
+key_file = "data/private/amap.key"
+js_key_file = "data/private/amap-js.key"
+js_security_code_file = "data/private/amap-js-security-code.txt"
+js_style_id_file = "data/private/amap-js-style-id.txt"
+cache_db = "data/private/map-cache.db"
+origin_address = "示例地铁站"
+origin_city = "深圳市"
+strategy = 8
+alternative_routes = 3
+departure_time = "09:00"
+request_timeout_seconds = 6.0
+request_attempts = 3
+retry_backoff_seconds = 1.0
+error_log = "data/private/map-errors.jsonl"
+geocode_ttl_days = 30
+route_ttl_hours = 12
+
+[model]
+enabled = false
+provider = "ollama"
+name = "qwen3.5:4b"
+endpoint = "http://127.0.0.1:11434"
+temperature = 0.1
+keep_alive = "10m"
+request_timeout_seconds = 90
+queue_size = 100
+results_file = "data/private/model-results.json"
+
+[scoring.capability]
+education = "示例本科生"
+strength_subjects = ["数学", "物理", "化学"]
+preferred_subjects = ["数学", "物理"]
+weekend_only = true
+
+[[scoring.capability.experience]]
+level = "小学六年级"
+subjects = ["数学"]
+
+[[scoring.capability.experience]]
+level = "初三"
+subjects = ["数学", "物理", "化学"]
+
+[[scoring.capability.experience]]
+level = "高三"
+subjects = ["数学"]

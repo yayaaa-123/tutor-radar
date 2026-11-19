@@ -1,0 +1,7 @@
+# Install the upstream package without dependencies, then install only this
+# audited read-path dependency set. UI/OCR/sending dependencies are excluded.
+wechatauto-replica==1.1.9
+cryptography>=41,<51
+psutil>=5.9,<8
+zstandard>=0.23,<1
+requests>=2.32,<3
